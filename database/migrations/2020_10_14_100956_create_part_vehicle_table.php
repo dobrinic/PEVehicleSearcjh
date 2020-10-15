@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePatrVehicleTable extends Migration
+class CreatePartVehicleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePatrVehicleTable extends Migration
      */
     public function up()
     {
-        Schema::create('patr_vehicle', function (Blueprint $table) {
+        Schema::create('part_vehicle', function (Blueprint $table) {
             $table->unsignedBigInteger('part_id');
             $table->unsignedBigInteger('vehicle_id');
 
             $table->primary(['part_id', 'vehicle_id']);
 
-            $table->foreign('part_id')->references('id')->on('parts')->onDelete('cascade');
-            $table->foreign('vehicle_id')->references('vehicle_id')->on('vehicles')->onDelete('cascade');
+            $table->foreign('part_id')->references('id')->on('parts')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('vehicle_id')->references('vehicle_id')->on('vehicles')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePatrVehicleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patr_vehicle');
+        Schema::dropIfExists('part_vehicle');
     }
 }

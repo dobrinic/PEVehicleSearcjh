@@ -5,8 +5,6 @@
 </head>
 
 <body>
-    @include('includes.notifications')
-
     @include('includes.header')
 
     @yield('content')
