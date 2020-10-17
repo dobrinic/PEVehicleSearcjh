@@ -1,5 +1,4 @@
 <?php
-
     $vars = Session::all();
     foreach ($vars as $key => $value) {
         switch($key) {
@@ -17,6 +16,7 @@
                     </div>
                 </div>
             <?php
+            Session::forget($key);
             break;
             case 'errors':
             ?>
@@ -37,10 +37,10 @@
                     </div>
                 </div>
             <?php
+            Session::forget($key);
             break;
             default:
         }
-        Session::forget($key);
     }
 
 ?>

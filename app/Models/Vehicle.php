@@ -14,4 +14,14 @@ class Vehicle extends Model
     {
         return $this->belongsToMany(Part::class, 'part_vehicle', 'vehicle_id', 'part_id');
     }
+
+    public function fullName()
+    {
+        return "$this->bike_producer $this->bike_model $this->year";
+    }
+
+    public function marke()
+    {
+        return $this->groupBy('bike_producer')->get();
+    }
 }

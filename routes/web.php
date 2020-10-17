@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('search', [HomeController::class, 'search'])->name('search');
 
 Route::post('vehicles/import', [VehicleController::class, 'import'])->name('vehicles.import');
 Route::post('parts/import', [PartController::class, 'import'])->name('parts.import');
