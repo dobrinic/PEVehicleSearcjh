@@ -1,5 +1,5 @@
 <div class="row card-deck">
-    @foreach ($vehicles2 as $vehicle)
+    @foreach ($vehicles as $vehicle)
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-img-top"><span>{{ $vehicle->series }} image</span></div>
@@ -20,6 +20,6 @@
         @include('chunks.modals.parts', [ 'vehicle' => $vehicle ])
     @endforeach
 </div>
-<div class="pagination-wrapper">
-    {{ $vehicles2->appends(['sort' => 'votes'])->links() }}
+<div class="pagination-wrapper filtered">
+    {{ $vehicles->links() }}
 </div>

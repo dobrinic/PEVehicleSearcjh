@@ -33,14 +33,12 @@ function setOtherSelects(vehicles, selectedFilters) {
     });
 
     sizes.sort((a, b) => a - b).forEach(size => {
-        console.log(size)
         sizeSelect.append(
             '<option ' + (selectedFilters.includes(size.toString()) ? 'selected ' : '') + 'value="' + size + '">' + size + '</option>'
             );
     });
 
     years.sort().forEach(year => {
-        console.log(year)
         yearSelect.append(
             '<option ' + (selectedFilters.includes(year.toString()) ? 'selected ' : '') + 'value="' + year + '">' + year + '</option>'
             );

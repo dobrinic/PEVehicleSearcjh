@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,7 @@ class HomeController extends Controller
             $selectedFilters = [];
 
             foreach ($request->all() as $key => $value) {
-                if($value){
+                if($value && $key != 'page'){
                     $query->where($key, $value);
                     array_push($selectedFilters, $value);
                 }
@@ -36,12 +36,27 @@ class HomeController extends Controller
 
             $selectors = $query->get();
 
-            $vehicles2 = $query->simplePaginate(12);
-            $vehicles2->withPath('/');
+            /* CUSTOM PAGINATION */
+            $totalCount = $query->count();
+            $pageNum = $request->page ?:1;
 
-            // dd($vehicles);
+            if ($pageNum) {
+                $skip = 12 * ($pageNum - 1);
+                $query = $query->take(12)->skip($skip);
+            } else {
+                $query = $query->take(12)->skip(0);
+            }
 
-            $html = view('chunks.search-results', compact('vehicles2'))->render();
+            $parameters = $request->getQueryString();
+            $parameters = preg_replace('/&page(=[^&]*)?|^page(=[^&]*)?&?/','', $parameters);
+            $path = url('/') . '/?' . $parameters;
+
+            $vehicles = $query->get();
+
+            $vehicles = new LengthAwarePaginator($vehicles, $totalCount, 12, $pageNum);
+            $vehicles = $vehicles->withPath($path);
+
+            $html = view('chunks.search-results', compact('vehicles'))->render();
 
             return response()->json( compact('selectors', 'html', 'selectedFilters'));
         }

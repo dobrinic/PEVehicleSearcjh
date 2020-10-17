@@ -20,8 +20,4 @@ class Vehicle extends Model
         return "$this->bike_producer $this->bike_model $this->year";
     }
 
-    public function marke()
-    {
-        return $this->groupBy('bike_producer')->get();
-    }
 }

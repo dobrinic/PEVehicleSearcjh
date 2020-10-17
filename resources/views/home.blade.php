@@ -149,6 +149,12 @@
             resetSelects();
             callAjax($('#filters-form').serialize(), "{{ route('search') }}");
         });
+
+        $('.search-results').on('click', '.filtered .page-link', function (event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('?').pop();
+            callAjax( page, "{{ route('search') }}" );
+        })
     });
 
 </script>
