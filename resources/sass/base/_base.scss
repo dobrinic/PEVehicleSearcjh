@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+body {
+    background: $white;
+    color: $grey;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+a {
+    color: $grey;
+    text-decoration: none;
+
+    @include on-event {
+        text-decoration: none;
+    }
+}

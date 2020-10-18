@@ -1,0 +1,30 @@
+{
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+
+    "liveSassCompile.settings.formats":[
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/public/css/"
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/public/css/"
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "resources/sass/main.scss"
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**"
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "liveSassCompile.settings.autoprefix": []
+
+}

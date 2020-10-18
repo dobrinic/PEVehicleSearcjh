@@ -12,7 +12,7 @@ class Vehicle extends Model
 
     public function parts()
     {
-        return $this->belongsToMany(Part::class, 'part_vehicle', 'vehicle_id', 'part_id');
+        return $this->belongsToMany(Part::class, 'part_vehicle', 'vehicle_id', 'part_id')->orderBy('active', 'desc');
     }
 
     public function fullName()

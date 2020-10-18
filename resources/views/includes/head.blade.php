@@ -5,5 +5,5 @@
 
 <!-- ================== BEGIN BASE CSS STYLE ================== -->
 <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/main.css') }}" rel="stylesheet" />
 <!-- ================== END BASE CSS STYLE ================== -->

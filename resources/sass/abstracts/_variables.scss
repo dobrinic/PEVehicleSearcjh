@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$lt-grey: #F1F1F1 !default;
+$med-grey: #8F8F8F !default;
+$grey: #343434 !default;
+$black: #000000 !default;
+$white: #ffffff !default;
+
+$border: 1px solid $med-grey;
+
+$shadow-hard: 0px 0px 30px rgba(0, 0, 0, 0.12);
+$shadow-light: 0px 0px 30px rgba(0, 0, 0, 0.06);
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1200px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'mobile': ( max-width: 991px ),
+  'sm': ( max-width: 768px ),
+  'md':  '( min-width: 769px ) and (max-width: 1199px)',
+  'lg': ( min-width: 1200px ),
+  'desktop': ( min-width: 992px )
+) !default;

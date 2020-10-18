@@ -4,12 +4,24 @@
             <div class="card h-100">
                 <div class="card-img-top"><span>{{ $vehicle->series }} image</span></div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ $vehicle->fullName() }}</h5>
+                    <h5 class="card-title mb-4">{{ $vehicle->fullName() }}</h5>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Series: {{ $vehicle->series }}</li>
-                        <li class="list-group-item">Size: {{ $vehicle->size }}</li>
-                        <li class="list-group-item">Model: {{ $vehicle->bike_model }}</li>
-                        <li class="list-group-item">Year: {{ $vehicle->year }}</li>
+                        <li class="list-group-item bolder text-muted">
+                            <span class="">Series:</span>
+                            <span class="">{{ $vehicle->series }}</span>
+                        </li>
+                        <li class="list-group-item bolder text-muted">
+                            <span class="">Size:</span>
+                            <span class="">{{ $vehicle->size }}</span>
+                        </li>
+                        <li class="list-group-item bolder text-muted">
+                            <span class="">Model:</span>
+                            <span class="">{{ $vehicle->bike_model }}</span>
+                        </li>
+                        <li class="list-group-item bolder text-muted">
+                            <span class="">Year:</span>
+                            <span class="">{{ $vehicle->year }}</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="card-footer">
