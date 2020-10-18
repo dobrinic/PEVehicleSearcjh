@@ -12,6 +12,7 @@
                     @forelse ($vehicle->parts as $part)
                     <li class="list-group-item">
                         @if ($part->active)
+                            {{-- TODO: Link should point to "parts/show" page with info about Part --}}
                             <a class="text-success" href="">{{ $part->name }}
                                 <span class="float-right badge badge-success">Available</span>
                             </a>

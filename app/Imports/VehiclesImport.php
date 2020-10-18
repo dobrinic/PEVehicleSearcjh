@@ -20,6 +20,7 @@ class VehiclesImport implements ToModel, WithValidation, WithHeadingRow
     */
     public function model(array $row)
     {
+        // TODO: This table should be normalized for production purposes
         return new Vehicle([
             'vehicle_id' => $row['vehicle_id'],
             'bike_producer' => $row['bike_producer'],

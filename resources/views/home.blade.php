@@ -12,6 +12,7 @@
     <div class="container">
 
         <div class="jumbotron">
+            {{-- TODO: all strings should be in "resources/lang/en/*.php" for future translations --}}
             <h1 class="display-4 mb-5">Welcome to Parts Europe search page!</h1>
 
             @if ($vehicles->isEmpty())

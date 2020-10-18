@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        {{-- TODO: This should really be separate page "vehicle/show" with info about vehicle and list of available parts --}}
         @include('chunks.modals.parts', [ 'vehicle' => $vehicle ])
     @endforeach
 </div>
