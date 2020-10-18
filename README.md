@@ -6,15 +6,15 @@
 ```shell
 git clone https://github.com/dobrinic/PEVehicleSearcjh.git
 ```
+##### Create database in MySql
+```shell
+CREATE DATABASE name_here;
+```
 
 ## Installation
 **Navigate to newly created directory**
 ```shell
 $ cd PEVehicleSearcjh
-```
-**Create database in MySql**
-```shell
-CREATE DATABASE name_here;
 ```
 
 **Install the Package Via Composer:**
